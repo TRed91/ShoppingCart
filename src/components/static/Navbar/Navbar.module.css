@@ -42,3 +42,30 @@
     margin: 0;
     font-size: 40px;
 }
+
+@media (min-width: 480px) and (max-width: 1024px) {
+  
+    /* Tablest */
+    .header {
+        flex-direction: column;
+
+        padding: 10px;
+    }
+    
+}
+
+  @media (min-width: 320px) and (max-width: 480px) {
+  
+    /* Smartphones */
+    .header {
+        flex-direction: column;
+
+        padding: 10px 3px;
+    }
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+}
