@@ -1,0 +1,44 @@
+.header {
+    display: flex;
+    justify-content: space-around;
+
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.285);
+    padding: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+
+    font-size: 20px;
+}
+
+.linkContainer {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.navLinks {
+    text-decoration: none;
+}
+
+.counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #0000001b;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 15px;
+}
+
+.hero {
+    margin: 0;
+    font-size: 40px;
+}
