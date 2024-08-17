@@ -1,4 +1,5 @@
 import styles from './Navbar.module.css'
+import { Link } from 'react-router-dom'
 
 const Navbar = ({itemCount = 0}) => {
     return (
@@ -8,13 +9,13 @@ const Navbar = ({itemCount = 0}) => {
             </div>
             <nav className={styles.navbar}>
                 <div className={styles.linkContainer}>
-                    <a className={styles.navLinks} href="">Home</a>
+                    <Link className={styles.navLinks} to="/">Home</Link>
                 </div>
                 <div className={styles.linkContainer}>
-                    <a className={styles.navLinks} href="">Shop</a>
+                    <Link className={styles.navLinks} to="shop">Shop</Link>
                 </div>
                 <div className={styles.linkContainer}>
-                    <a className={styles.navLinks} href="">Cart</a>
+                    <Link className={styles.navLinks} to="">Cart</Link>
                     <div className={styles.counter}>
                         <span>{itemCount}</span>
                     </div>
