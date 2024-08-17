@@ -1,11 +1,11 @@
 import styles from './Navbar.module.css'
 import { Link } from 'react-router-dom'
 
-const Navbar = ({itemCount = 0}) => {
+const Navbar = ({itemsInCart}) => {
     return (
         <div className={styles.header}>
             <div className={styles.linkContainer}>
-                <h1 className={styles.hero}>SHOP EPIC</h1>
+                <Link to="/"><h1 className={styles.hero}>SHOP EPIC</h1></Link>
             </div>
             <nav className={styles.navbar}>
                 <div className={styles.linkContainer}>
@@ -17,7 +17,7 @@ const Navbar = ({itemCount = 0}) => {
                 <div className={styles.linkContainer}>
                     <Link className={styles.navLinks} to="">Cart</Link>
                     <div className={styles.counter}>
-                        <span>{itemCount}</span>
+                        <span>{itemsInCart}</span>
                     </div>
                 </div>
             </nav>

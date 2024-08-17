@@ -1,0 +1,41 @@
+.detailsBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    font-size: 20px;
+}
+
+h3, h4 {
+    margin: 0;
+}
+
+span {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.image {
+    width: 400px;
+    height: 300px;
+}
+
+.detailsContainer {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 50px;
+}
+
+.inputContainer {
+    flex: 1;
+}
+
+.bottomInfo {
+    display: flex;
+    gap: 50px;
+}

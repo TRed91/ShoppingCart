@@ -6,10 +6,15 @@ import ShoppingPage from './components/ShoppingPage/ShoppingPage'
 import { Outlet } from 'react-router-dom'
 
 function App() {
+    const [cart, setCart] = useState([]);
+
+    let numberOfItems = 0;
+    cart.forEach(item => numberOfItems += parseInt(item.numberOfItems))
+
     return (
         <>
-            <Navbar />
-            < Outlet/>
+            <Navbar itemsInCart={numberOfItems}/>
+            <Outlet context={[cart, setCart]}/>
             <Footer />
         </>
     )

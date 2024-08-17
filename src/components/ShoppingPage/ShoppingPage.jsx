@@ -1,40 +1,28 @@
+import { Link, useOutletContext } from 'react-router-dom'
 import styles from './ShoppingPage.module.css'
 import { useEffect, useState } from 'react'
-
-const ItemCard = ({id, title, price, rating, imageUrl}) => {
-    console.log(title)
-    return (
-        <div className={styles.card}>
-            <div className={styles.titleContainer}>
-                <h4>{title}</h4>
-            </div>
-            <img src={imageUrl} alt="" />
-            <div className={styles.bottomInfo}>
-                <div>${price}</div>
-                <div><span>★</span>{rating.rate}</div>
-            </div>
-            <div className={styles.formfield}>
-                <input type="number" name="" id=""/>
-                <button>Add to Cart</button>
-            </div>
-        </div>
-    )
-}
+import ItemCard from './ItemCard'
 
 const ShoppingPage = () => {
     const [items, setItems] = useState(null);
     const [isFetched, setIsFetched] = useState(false);
+    const [cart, setCart] = useOutletContext();
+    const [addToCart, setAddToCart] = useState();
 
     useEffect(() => {
         fetch("https://fakestoreapi.com/products")
             .then(resolve => resolve.json())
             .then(data => {
-                console.log(data);
                 setIsFetched(true);
                 setItems(data);
             })
             .catch(err => console.log(err));
     },[])
+
+    useEffect(() => {
+        if(addToCart)
+            setCart([...cart, addToCart])
+    }, [addToCart])
 
     return (
         <div className={styles.container}>
@@ -46,8 +34,10 @@ const ShoppingPage = () => {
                             title={item.title} 
                             price={item.price} 
                             rating={item.rating} 
-                            imageUrl={item.image}/>
-                        )
+                            imageUrl={item.image}
+                            description={item.description}
+                            addToCart={setAddToCart}/> 
+                )
             })}
         </div>
     )
