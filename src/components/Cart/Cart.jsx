@@ -43,6 +43,7 @@ const Cart = () => {
                 </ul>   
                 <div className={styles.totalContainer}>
                     <h1>Total: ${((itemsTotal + (itemsTotal * 0.1)) + shipping).toFixed(2)}</h1>
+                    <button className={styles.checkoutButton}>CHECKOUT</button>
                 </div>
             </div>
         </div>

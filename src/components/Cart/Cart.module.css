@@ -50,6 +50,31 @@ li {
 .totalContainer {
     flex: 3;
     padding: 20px;
-    display: flex;
+}
+
+.checkoutButton {
+    background-color: lightgreen;
+}
+
+@media (min-width: 480px) and (max-width: 1024px) {
+  
+    /* Tablest */
+   
+    
+}
+
+  @media (min-width: 320px) and (max-width: 480px) {
+  
+    /* Smartphones */
+    .cartContainer {
+        flex-direction: column;
+    }
+
+    .itemcardContainer{
+        flex-direction: column;
+        height: 250px;
+    }
+
+
     
 }
