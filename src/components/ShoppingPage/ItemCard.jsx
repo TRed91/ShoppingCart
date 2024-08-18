@@ -3,7 +3,7 @@ import styles from './ShoppingPage.module.css'
 import { useState } from 'react';
 
 const ItemCard = ({item, addToCart}) => {
-    const [numberOfItems, setNumberOfItems] = useState('1');
+    const [numberOfItems, setNumberOfItems] = useState(1);
     let navigate = useNavigate();
 
     const handleClick = () => {
@@ -20,14 +20,18 @@ const ItemCard = ({item, addToCart}) => {
                 <div>${item.price}</div>
                 <div><span>★</span>{item.rating.rate}</div>
             </div>
-            <form className={styles.formfield}>
-                <input  type="number" 
-                        value={numberOfItems} 
-                        onChange={(e) => setNumberOfItems(e.target.value)}
-                        min="1"
-                        max="50"/>
+            <div className={styles.formfield}>
+                <div className={styles.inputContainer}>
+                    <button onClick={() => setNumberOfItems(numberOfItems == 1 ? 1 : numberOfItems - 1)}>⇩</button>
+                    <input  type="number" 
+                            value={numberOfItems} 
+                            onChange={(e) => setNumberOfItems(e.target.value)}
+                            min="1"
+                            max="50"/>
+                    <button onClick={() => setNumberOfItems(numberOfItems + 1)}>⇧</button>
+                </div>
                 <button type="button" onClick={() => addToCart({...item, numberOfItems: numberOfItems})}>Add to Cart</button>
-            </form>
+            </div>
         </div>
     )
 }

@@ -39,3 +39,7 @@ span {
     display: flex;
     gap: 50px;
 }
+
+.inputAndButtons {
+    display: flex;
+}

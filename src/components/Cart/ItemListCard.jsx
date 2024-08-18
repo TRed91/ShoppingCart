@@ -1,13 +1,12 @@
 import styles from './Cart.module.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const ItemListCart = ({details, update, remove}) => {
     const [numberOfItems, setNumberOfItems] = useState(details.numberOfItems);
 
-    const handleChange = (event) => {
-        update({...details, numberOfItems: event.target.value});
-        setNumberOfItems(event.target.value);
-    }
+    useEffect(() => {
+        update({...details, numberOfItems: numberOfItems});
+    }, [numberOfItems])
 
     return (
         <div className={styles.itemcardContainer}>
@@ -17,11 +16,17 @@ const ItemListCart = ({details, update, remove}) => {
                 <div>${details.price}</div>
                 <div>★{details.rating.rate}</div>
                 <label>Items in cart: </label>
-                <input  type="number" 
-                        value={numberOfItems} 
-                        onChange={e => handleChange(e)} 
-                        min="1"
-                        max="50"/>
+                <div className={styles.inputContainer}>
+                    <button onClick={() => {
+                        setNumberOfItems(numberOfItems == 1 ? 1 : numberOfItems - 1)
+                        }}>⇩</button>
+                    <input  type="number" 
+                            value={numberOfItems} 
+                            onChange={e => setNumberOfItems(e.target.value)} 
+                            min="1"
+                            max="50"/>
+                    <button onClick={() => setNumberOfItems(numberOfItems + 1)}>⇧</button>
+                </div>
                 <button onClick={() => remove(details.id)}>Delete</button>
             </div>
         </div>

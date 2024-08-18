@@ -56,6 +56,10 @@ li {
     background-color: lightgreen;
 }
 
+.inputContainer {
+    display: flex;
+}
+
 @media (min-width: 480px) and (max-width: 1024px) {
   
     /* Tablest */

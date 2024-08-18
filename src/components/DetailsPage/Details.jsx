@@ -4,7 +4,7 @@ import styles from "./Details.module.css";
 
 const Details = () => {
     const {state} = useLocation();
-    const [numberOfItems, setNumberOfItems] = useState('1');
+    const [numberOfItems, setNumberOfItems] = useState(1);
     const [cart, setCart] = useOutletContext();
     
     return (
@@ -18,17 +18,21 @@ const Details = () => {
                     <h4>★{state.rating.rate} <span>{state.rating.count} ratings</span></h4>
                 </div>
             </div>
-            <form className={styles.inputContainer}>
-                <input  type="number" 
-                        value={numberOfItems} 
-                        onChange={(e) => setNumberOfItems(e.target.value)}
-                        min="1"
-                        max="50"/>
+            <div className={styles.inputContainer}>
+                <div className={styles.inputAndButtons}>
+                    <button onClick={() => setNumberOfItems(numberOfItems == 1 ? 1 : numberOfItems - 1)}>⇩</button>
+                    <input  type="number" 
+                            value={numberOfItems} 
+                            onChange={(e) => setNumberOfItems(e.target.value)}
+                            min="1"
+                            max="50"/>
+                    <button onClick={() => setNumberOfItems(numberOfItems + 1)}>⇧</button>
+                </div>
                 <button type="button" 
                         onClick={() => setCart([...cart, {...state, numberOfItems: numberOfItems}])}>
                     Add to Cart
                 </button>
-            </form>
+            </div>
         </div>
     )
 }
