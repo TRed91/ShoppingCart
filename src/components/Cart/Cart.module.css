@@ -1,11 +1,55 @@
 .cartContainer{
+    display: flex;
 
+    padding: 10px;
+    min-height: 60vh;
 }
 
 .itemList{
-
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .checkoutContainer{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.itemcardContainer{
+    height: 140px;
+
+    border: 1px solid;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+
+.image {
+    width: 70px;
+    height: 100px;
+    object-fit: contain;
+    
+}
+
+.priceBreakdown{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    font-size: 20px;
+}
+
+li {
+    list-style: none;
+}
+
+.totalContainer {
+    flex: 3;
+    padding: 20px;
+    display: flex;
     
 }

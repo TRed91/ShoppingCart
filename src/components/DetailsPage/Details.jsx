@@ -24,7 +24,10 @@ const Details = () => {
                         onChange={(e) => setNumberOfItems(e.target.value)}
                         min="1"
                         max="50"/>
-                <button type="button" onClick={() => setCart([...cart, {...state, numberOfItems: numberOfItems}])}>Add to Cart</button>
+                <button type="button" 
+                        onClick={() => setCart([...cart, {...state, numberOfItems: numberOfItems}])}>
+                    Add to Cart
+                </button>
             </form>
         </div>
     )
