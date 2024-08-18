@@ -7,6 +7,7 @@ import { Outlet } from 'react-router-dom'
 
 function App() {
     const [cart, setCart] = useState([]);
+    const [items, setItems] = useState(null);
 
     let numberOfItems = 0;
     cart.forEach(item => numberOfItems += parseInt(item.numberOfItems))
@@ -14,7 +15,7 @@ function App() {
     return (
         <>
             <Navbar itemsInCart={numberOfItems}/>
-            <Outlet context={[cart, setCart]}/>
+            <Outlet context={[cart, setCart, items]}/>
             <Footer />
         </>
     )

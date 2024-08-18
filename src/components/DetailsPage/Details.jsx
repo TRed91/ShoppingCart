@@ -11,7 +11,7 @@ const Details = () => {
         <div className={styles.detailsBody}>
             <div className={styles.detailsContainer}>
                 <h2>{state.title}</h2>
-                <img src={state.imageUrl} alt="" className={styles.image}/>
+                <img src={state.image} alt="" className={styles.image}/>
                 <p>{state.description}</p>
                 <div className={styles.bottomInfo}>
                     <h3>${state.price}</h3>
@@ -24,7 +24,7 @@ const Details = () => {
                         onChange={(e) => setNumberOfItems(e.target.value)}
                         min="1"
                         max="50"/>
-                <button type="button" onClick={() => setCart([...cart, {numberOfItems: numberOfItems, id: state.id}])}>Add to Cart</button>
+                <button type="button" onClick={() => setCart([...cart, {...state, numberOfItems: numberOfItems}])}>Add to Cart</button>
             </form>
         </div>
     )

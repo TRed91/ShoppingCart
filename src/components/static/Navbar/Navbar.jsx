@@ -15,7 +15,7 @@ const Navbar = ({itemsInCart}) => {
                     <Link className={styles.navLinks} to="shop">Shop</Link>
                 </div>
                 <div className={styles.linkContainer}>
-                    <Link className={styles.navLinks} to="">Cart</Link>
+                    <Link className={styles.navLinks} to="cart">Cart</Link>
                     <div className={styles.counter}>
                         <span>{itemsInCart}</span>
                     </div>

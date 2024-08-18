@@ -30,12 +30,7 @@ const ShoppingPage = () => {
             {isFetched && items.map((item) => {
                 return (
                 <ItemCard   key={item.id}
-                            id={item.id}
-                            title={item.title} 
-                            price={item.price} 
-                            rating={item.rating} 
-                            imageUrl={item.image}
-                            description={item.description}
+                            item={item}
                             addToCart={setAddToCart}/> 
                 )
             })}
