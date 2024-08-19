@@ -83,6 +83,7 @@ img {
 }
 
 .arrowButton {
+    width: 40px;
     border: none;
     background-color: #1d57b4;
     color: white;
@@ -123,4 +124,13 @@ img {
 
 .addToCartBtn:active {
     box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.344);
+}
+
+.numberInput {
+    border: none;
+    height: 30px;
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.378);
+    border-radius: 3px;
+    font-size: 18px;
+    padding-left: 7px;
 }
