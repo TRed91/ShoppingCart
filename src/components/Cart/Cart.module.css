@@ -1,8 +1,25 @@
 .cartContainer{
-    display: flex;
+    --btnBoxShadow: 2px 2px 2px rgba(0, 0, 0, 0.344);
 
-    padding: 10px;
+    display: flex;
+    gap: 20px;
+
+    padding: 15px;
     min-height: 60vh;
+
+    font-family: 'raleway','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    background: linear-gradient(0deg, rgba(255, 235, 124, 0.468) 0%, rgba(255, 215, 141, 0.51) 51%, rgba(255, 226, 122, 0.536) 100%);
+}
+
+.detailsContainer {
+    flex: 3;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .itemList{
@@ -12,29 +29,49 @@
     gap: 5px;
 }
 
+.price {
+    font-size: 25px;
+}
+
+hr {
+    width: 90%;
+}
+
 .checkoutContainer{
     flex: 2;
     display: flex;
     flex-direction: column;
+
+    border-radius: 5px;
+
+    background-color: white;
+    box-shadow: 0px 0px 5px #0000006c;
 }
 
 .itemcardContainer{
     box-sizing: content-box ;
 
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
     height: 140px;
 
-    border: 1px solid;
+    box-shadow: 0px 0px 5px #0000006c;
     border-radius: 5px;
     display: flex;
     gap: 10px;
     padding: 10px;
+
+    background-color: white;
 }
 
 .image {
+    flex: 1;
+
     width: 70px;
     height: 100px;
     object-fit: contain;
-    
 }
 
 .priceBreakdown{
@@ -52,14 +89,93 @@ li {
 .totalContainer {
     flex: 3;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .checkoutButton {
-    background-color: lightgreen;
+    background-color: rgb(203, 181, 56);
+    border: none;
+    padding: 10px 30px;
+    font-size: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px #0000006c;
+    font-weight: bold;
+}
+
+.checkoutButton:hover {
+    background-color: rgb(243, 211, 26);
+}
+
+.checkoutButton:active {
+    box-shadow: inset 2px 2px 3px #00000069;
+    transform: translateY(3px);
 }
 
 .inputContainer {
     display: flex;
+    gap : 2px;
+}
+
+.editContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.arrowButton {
+    width: 35px;
+    height: 35px;
+    border: none;
+    background-color: #1d57b4;
+    color: white;
+    box-shadow: var(--btnBoxShadow);
+
+    font-size: 20px;
+
+    border-radius: 3px;
+}
+
+.arrowButton:hover {
+    background-color: #226de6;
+}
+
+.arrowButton:active {
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.344);
+}
+
+.deleteBtn {
+    display: flex;
+    align-items: center;
+
+    border: none;
+    background-color: #b41d1d;
+    color: white;
+    padding: 5px;
+    box-shadow: var(--btnBoxShadow);
+
+    font-size: 20px;
+
+    border-radius: 3px;
+}
+
+.deleteBtn:hover {
+    background-color: #da2d2d;
+}
+
+.deleteBtn:active {
+    box-shadow: inset 2px 2px 3px #00000059;
+}
+
+.deleteIcon {
+    height: 30px;
+    width: 30px;
+
+    filter: invert(100%);
 }
 
 @media (min-width: 480px) and (max-width: 1024px) {
@@ -78,7 +194,7 @@ li {
 
     .itemcardContainer{
         flex-direction: column;
-        height: 250px;
+        height:fit-content;
     }
 
 

@@ -1,5 +1,5 @@
 .container {
-    --btnBoxShaodw: 2px 2px 2px rgba(0, 0, 0, 0.344);
+    --btnBoxShadow: 2px 2px 2px rgba(0, 0, 0, 0.344);
 
     width: 100%;
     
@@ -87,7 +87,7 @@ img {
     border: none;
     background-color: #1d57b4;
     color: white;
-    box-shadow: var(--btnBoxShaodw);
+    box-shadow: var(--btnBoxShadow);
 
     border-radius: 3px;
 }
@@ -110,7 +110,7 @@ img {
     background-color: rgb(109, 189, 109);
     padding: 5px;
     border-radius: 3px;
-    box-shadow: var(--btnBoxShaodw);
+    box-shadow: var(--btnBoxShadow);
 }
 
 .addToCartIcon {

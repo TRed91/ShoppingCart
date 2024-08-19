@@ -1,5 +1,6 @@
 import styles from './Cart.module.css';
 import { useEffect, useState } from 'react';
+import removeIcon from '../../assets/icons/cart-xmark-svgrepo-com.svg'
 
 const ItemListCart = ({details, update, remove}) => {
     const [numberOfItems, setNumberOfItems] = useState(details.numberOfItems);
@@ -13,22 +14,26 @@ const ItemListCart = ({details, update, remove}) => {
             <img src={details.image} alt="product-image" className={styles.image}/>
             <div className={styles.detailsContainer}>
                 <h3>{details.title}</h3>
-                <div>${details.price}</div>
-                <div>★{details.rating.rate}</div>
-                <label>Items in cart: </label>
-                <div className={styles.inputContainer}>
-                    <button onClick={() => {
-                        setNumberOfItems(numberOfItems == 1 ? 1 : numberOfItems - 1)
-                        }}>⇩</button>
-                    <input  type="number" 
-                            value={numberOfItems} 
-                            onChange={e => setNumberOfItems(e.target.value)} 
-                            min="1"
-                            max="50"/>
-                    <button onClick={() => setNumberOfItems(numberOfItems + 1)}>⇧</button>
-                </div>
-                <button onClick={() => remove(details.id)}>Delete</button>
+                <div className={styles.price}>${details.price}</div>
             </div>
+            <div className={styles.editContainer}>
+                    <label>Items in cart: </label>
+                    <div className={styles.inputContainer}>
+                        <button onClick={() => {
+                            setNumberOfItems(numberOfItems == 1 ? 1 : numberOfItems - 1)
+                            }}
+                                className={styles.arrowButton}>⇩</button>
+                        <input  type="number" 
+                                value={numberOfItems} 
+                                onChange={e => setNumberOfItems(e.target.value)} 
+                                min="1"/>
+                        <button onClick={() => setNumberOfItems(parseInt(numberOfItems) + 1)}
+                                className={styles.arrowButton}>⇧</button>
+                    </div>
+                    <button onClick={() => remove(details.id)}
+                            className={styles.deleteBtn}><img src={removeIcon} alt="delet item button"
+                                                            className={styles.deleteIcon} /></button>
+                </div>
         </div>
     )
 }

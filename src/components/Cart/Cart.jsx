@@ -37,9 +37,9 @@ const Cart = () => {
             </div>
             <div className={styles.checkoutContainer}>
                 <ul className={styles.priceBreakdown}>
-                    <li>Items Total: {itemsTotal.toFixed(2)}</li>
-                    <li>Shipping: ${shipping}</li>
-                    <li>Tax: 10%</li>
+                    <li>Items Total:&emsp;${itemsTotal.toFixed(2)} <hr /> </li>
+                    <li>Shipping:&emsp;&emsp;${shipping}<hr /></li>
+                    <li>Tax:&emsp;&emsp;&emsp;&emsp;&emsp;10%</li>
                 </ul>   
                 <div className={styles.totalContainer}>
                     <h1>Total: ${((itemsTotal + (itemsTotal * 0.1)) + shipping).toFixed(2)}</h1>
