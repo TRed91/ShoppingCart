@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useLocation, useOutletContext } from "react-router-dom";
 import styles from "./Details.module.css";
+import addCartIcon from "../../assets/icons/cart-plus-svgrepo-com.svg"
 
 const Details = () => {
     const {state} = useLocation();
@@ -18,7 +19,7 @@ const Details = () => {
                 setCart(newCart);
             }
         });
-        
+
         if (!isInCart)
             setCart([...cart, {...state, numberOfItems: numberOfItems}])
     }
@@ -26,27 +27,32 @@ const Details = () => {
     return (
         <div className={styles.detailsBody}>
             <div className={styles.detailsContainer}>
-                <h2>{state.title}</h2>
-                <img src={state.image} alt="" className={styles.image}/>
-                <p>{state.description}</p>
-                <div className={styles.bottomInfo}>
-                    <h3>${state.price}</h3>
-                    <h4>★{state.rating.rate} <span>{state.rating.count} ratings</span></h4>
+                <div className={styles.details}>
+                    <h2 className={styles.title}>{state.title}</h2>
+                    <img src={state.image} alt="" className={styles.image}/>
+                    <div className={styles.bottomInfo}>
+                        <h3>${state.price}</h3>
+                        <h4>★{state.rating.rate} <span>{state.rating.count} ratings</span></h4>
+                    </div>    
                 </div>
+                <p className={styles.description}>{state.description}</p>
             </div>
             <div className={styles.inputContainer}>
                 <div className={styles.inputAndButtons}>
-                    <button onClick={() => setNumberOfItems(numberOfItems == 1 ? 1 : numberOfItems - 1)}>⇩</button>
+                    <button onClick={() => setNumberOfItems(numberOfItems == 1 ? 1 : numberOfItems - 1)}
+                            className={styles.arrowButton}>⇩</button>
                     <input  type="number" 
                             value={numberOfItems} 
                             onChange={(e) => setNumberOfItems(e.target.value)}
-                            min="1"
-                            max="50"/>
-                    <button onClick={() => setNumberOfItems(numberOfItems + 1)}>⇧</button>
+                            className={styles.numberInput}
+                            min="1"/>
+                    <button onClick={() => setNumberOfItems(parseInt(numberOfItems) + 1)}
+                            className={styles.arrowButton}>⇧</button>
                 </div>
                 <button type="button" 
-                        onClick={() => handleAddToCart()}>
-                    Add to Cart
+                        onClick={() => handleAddToCart()}
+                        className={styles.addToCartBtn}>
+                    <span><img src={addCartIcon} className={styles.addCartIcon} alt="" /></span>Add to Cart
                 </button>
             </div>
         </div>

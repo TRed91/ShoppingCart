@@ -31,7 +31,7 @@ const ItemCard = ({item, addToCart}) => {
                             min="1"
                             max="50"
                             className={styles.numberInput}/>
-                    <button onClick={() => setNumberOfItems(numberOfItems + 1)}
+                    <button onClick={() => setNumberOfItems(parseInt(numberOfItems) + 1)}
                             className={styles.arrowButton}>⇧</button>
                 </div>
                 <button type="button" 

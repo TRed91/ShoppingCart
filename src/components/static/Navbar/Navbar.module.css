@@ -87,6 +87,11 @@
 
         padding: 10px;
     }
+
+    .counter {
+        bottom: 20px;
+        left: 30px;
+    }
     
 }
 
@@ -104,4 +109,9 @@
         gap: 10px;
     }
     
+    .counter {
+        position: relative;
+        bottom: 0;
+        left: 0;
+    }
 }

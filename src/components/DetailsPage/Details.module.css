@@ -1,7 +1,15 @@
 .detailsBody {
+    --btnBoxShadow: 2px 2px 2px #00000066;
+
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 5px;
+
+    font-family: 'raleway','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    padding: 20px;
+    background: linear-gradient(0deg, rgba(255, 235, 124, 0.468) 0%, rgba(255, 215, 141, 0.51) 51%, rgba(255, 226, 122, 0.536) 100%);;
 }
 
 p {
@@ -25,21 +33,137 @@ span {
 .detailsContainer {
     flex: 2;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    gap: 10px;
 
     padding: 50px;
+
+    background-color: white;
+
+    border-radius: 5px;
+
+    box-shadow: 0px 0px 3px #00000062;
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .inputContainer {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
 }
 
 .bottomInfo {
     display: flex;
     gap: 50px;
+    font-size: 25px;
 }
 
 .inputAndButtons {
     display: flex;
+}
+
+.arrowButton {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+
+    border: none;
+    background-color: #1d57b4;
+    color: white;
+    box-shadow: var(--btnBoxShadow);
+
+    border-radius: 3px;
+}
+
+.arrowButton:hover {
+    background-color: #226de6;
+}
+
+.arrowButton:active {
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.344);
+}
+
+.addToCartBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 150px;
+
+    font-size: 22px;
+
+    border: none;
+
+    background-color: rgb(109, 189, 109);
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: var(--btnBoxShadow);
+
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.addCartIcon {
+    height: 40px;
+    width: 40px;
+}
+
+.addToCartBtn:hover {
+    background-color: #c3f8ae;
+}
+
+.addToCartBtn:active {
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.344);
+}
+
+.numberInput {
+    border: none;
+    height: 60px;
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.378);
+    border-radius: 3px;
+    font-size: 18px;
+    padding-left: 15px;
+
+    font-size: 30px;
+}
+
+@media (min-width: 480px) and (max-width: 1024px) {
+  
+    /* Tablets */
+  .detailsContainer {
+    flex-direction: column;
+  }
+
+}
+ 
+@media (min-width: 320px) and (max-width: 480px) {
+  
+    /* Smartphones */
+
+    .detailsBody {
+        flex-direction: column;
+        width: 100vw;
+        padding: 5px;
+    }
+    .detailsContainer {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .title {
+        width: 90%;
+    }
+
+    .description {
+        width: 80%;
+    }
 }
