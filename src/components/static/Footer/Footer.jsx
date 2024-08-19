@@ -4,7 +4,7 @@ const Footer = () => {
     return(
         <footer className={styles.footer}>
             <div className={styles.hero}>
-                <h1>Shop Epic</h1>
+                <h1><span className={styles.storeName}>Tomi's</span> Shop</h1>
                 <p>We are a small family business but we offer best prices and guarantee fast and secure shipment!</p>
             </div>
             <div className={styles.linksContainer}>

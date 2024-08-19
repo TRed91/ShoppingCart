@@ -7,7 +7,6 @@ const ShoppingPage = () => {
     const [items, setItems] = useState(null);
     const [isFetched, setIsFetched] = useState(false);
     const [cart, setCart] = useOutletContext();
-    const [addToCart, setAddToCart] = useState();
 
     useEffect(() => {
         fetch("https://fakestoreapi.com/products")
@@ -19,10 +18,20 @@ const ShoppingPage = () => {
             .catch(err => console.log(err));
     },[])
 
-    useEffect(() => {
-        if(addToCart)
-            setCart([...cart, addToCart])
-    }, [addToCart])
+    const addToCartHandler = (item, numberOfItems) => {
+        let isInCart = false;
+        const newCart = [...cart]
+        newCart.forEach(e => {
+            if (e.id === item.id)
+            {
+                e.numberOfItems += numberOfItems
+                isInCart = true;
+                setCart(newCart);
+            }
+        });
+        if (!isInCart)
+            setCart([...cart, {...item, numberOfItems: numberOfItems}])
+    }
 
     return (
         <div className={styles.container}>
@@ -31,7 +40,7 @@ const ShoppingPage = () => {
                 return (
                 <ItemCard   key={item.id}
                             item={item}
-                            addToCart={setAddToCart}/> 
+                            addToCart={addToCartHandler}/> 
                 )
             })}
         </div>

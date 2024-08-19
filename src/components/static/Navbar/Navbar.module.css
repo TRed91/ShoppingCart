@@ -6,6 +6,11 @@
     padding: 20px;
 
     z-index: 10;
+
+    font-family: 'raleway';
+
+    background-color: rgb(18, 20, 46);
+    color: rgb(255, 255, 255);
 }
 
 .navbar {
@@ -21,10 +26,16 @@
     gap: 10px;
     justify-content: center;
     align-items: center;
+
+    position: relative;
 }
 
 .navLinks {
     text-decoration: none;
+}
+
+.navLinks:visited {
+    color: white;
 }
 
 .counter {
@@ -32,17 +43,40 @@
     justify-content: center;
     align-items: center;
 
-    background-color: #0000001b;
+    background-color: #7d5630;
+    color: white;
+    font-weight: bold;
 
     width: 30px;
     height: 30px;
 
     border-radius: 15px;
+
+    font-size: 20px;
+
+    position: absolute;
+    bottom: 35px;
+    left: 30px;
+    z-index: 10;
+}
+
+.counterContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero {
     margin: 0;
-    font-size: 40px;
+    font-size: 50px;
+    font-family: 'alex-brush','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 2px 2px 5px #ddab79;
+}
+
+.cartIcon {
+    width: 35px;
+    height: 35px;
+    filter: invert(100%);
 }
 
 @media (min-width: 480px) and (max-width: 1024px) {

@@ -19,6 +19,8 @@
 }
 
 .itemcardContainer{
+    box-sizing: content-box ;
+
     height: 140px;
 
     border: 1px solid;

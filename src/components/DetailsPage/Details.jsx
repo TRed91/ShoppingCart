@@ -6,6 +6,22 @@ const Details = () => {
     const {state} = useLocation();
     const [numberOfItems, setNumberOfItems] = useState(1);
     const [cart, setCart] = useOutletContext();
+
+    const handleAddToCart = () => {
+        const newCart = [...cart]
+        let isInCart = false;
+
+        newCart.forEach(e => {
+            if (e.id === state.id){
+                isInCart = true;
+                e.numberOfItems += numberOfItems;
+                setCart(newCart);
+            }
+        });
+        
+        if (!isInCart)
+            setCart([...cart, {...state, numberOfItems: numberOfItems}])
+    }
     
     return (
         <div className={styles.detailsBody}>
@@ -29,7 +45,7 @@ const Details = () => {
                     <button onClick={() => setNumberOfItems(numberOfItems + 1)}>⇧</button>
                 </div>
                 <button type="button" 
-                        onClick={() => setCart([...cart, {...state, numberOfItems: numberOfItems}])}>
+                        onClick={() => handleAddToCart()}>
                     Add to Cart
                 </button>
             </div>

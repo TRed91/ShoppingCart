@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Navbar from './components/static/navbar/Navbar'
 import Footer from './components/static/Footer/Footer'
 import { Outlet } from 'react-router-dom'
+import './App.css';
 
 function App() {
     const [cart, setCart] = useState([]);
