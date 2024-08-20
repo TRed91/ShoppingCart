@@ -137,7 +137,7 @@ img {
     padding-left: 7px;
 }
 
-@media (min-aspect-ratio: 2/1) {
+@media (min-aspect-ratio: 2/1) and (min-width: 2570px) {
     .container {
         min-height: 83vh;
         align-items: center;

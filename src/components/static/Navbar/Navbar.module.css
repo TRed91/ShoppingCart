@@ -116,7 +116,7 @@
     }
 }
 
-@media (min-aspect-ratio: 2/1) {
+@media (min-aspect-ratio: 2/1) and (min-width: 2570px){
     .header {
         justify-content: center;
         gap: 20vw;

@@ -200,7 +200,7 @@ li {
     } 
 }
 
-@media (min-aspect-ratio: 2/1) {
+@media (min-aspect-ratio: 2/1) and (min-width: 2570px){
     .cartContainer {
         height: 83vh;
         justify-content: center;

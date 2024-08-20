@@ -170,7 +170,7 @@ span {
     }
 }
 
-@media (min-aspect-ratio: 2/1) {
+@media (min-aspect-ratio: 2/1) and (min-width: 2570px) {
     .detailsBody {
         height: 83vh;
         align-items: center;

@@ -80,7 +80,7 @@ a {
     
 }
 
-@media (min-aspect-ratio: 2/1) {
+@media (min-aspect-ratio: 2/1) and (min-width: 2570px){
     .footer {
         justify-content: center;
         
