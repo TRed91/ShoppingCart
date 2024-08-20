@@ -115,3 +115,10 @@
         left: 0;
     }
 }
+
+@media (min-aspect-ratio: 2/1) {
+    .header {
+        justify-content: center;
+        gap: 20vw;
+    }
+}

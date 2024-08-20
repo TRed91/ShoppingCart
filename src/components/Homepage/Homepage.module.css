@@ -103,3 +103,22 @@
     }
     
 }
+
+@media (min-aspect-ratio: 2/1) {
+    .container {
+        justify-content: center;
+        height: 83vh;
+    }
+
+    .imagesContainer {
+        max-width: 30vw;
+    }
+
+    .textContainer {
+        max-width: 10vw;
+    }
+
+    .imageTwo {
+        transform: translate(400px, -1000px) rotate(5deg);
+    }
+}

@@ -79,3 +79,10 @@ a {
     }
     
 }
+
+@media (min-aspect-ratio: 2/1) {
+    .footer {
+        justify-content: center;
+        
+    }
+}

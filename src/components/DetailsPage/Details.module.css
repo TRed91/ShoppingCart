@@ -167,3 +167,20 @@ span {
         width: 80%;
     }
 }
+
+@media (min-aspect-ratio: 2/1) {
+    .detailsBody {
+        height: 83vh;
+        align-items: center;
+    }
+
+    .detailsContainer {
+        flex: none;
+        width: 30%;
+    }
+
+    .inputContainer {
+        flex: none;
+        width: 20%;
+    }
+}

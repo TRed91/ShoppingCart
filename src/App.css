@@ -24,4 +24,22 @@
 
 body {
     min-height: 100vh;
+    margin: 0;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+@media (min-aspect-ratio: 2/1) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+
+    #root {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+    }
 }

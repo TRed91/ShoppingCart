@@ -195,8 +195,22 @@ li {
     .itemcardContainer{
         flex-direction: column;
         height:fit-content;
+    } 
+}
+
+@media (min-aspect-ratio: 2/1) {
+    .cartContainer {
+        height: 83vh;
+        justify-content: center;
     }
 
+    .itemList {
+        flex: none;
+        width: 30%;
+    }
 
-    
+    .checkoutContainer {
+        flex: none;
+        width: 20%;
+    }
 }
