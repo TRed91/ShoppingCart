@@ -75,6 +75,8 @@ span {
     height: 60px;
     font-size: 30px;
 
+    text-align: center;
+
     border: none;
     background-color: #1d57b4;
     color: white;

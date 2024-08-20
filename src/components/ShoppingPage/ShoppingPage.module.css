@@ -89,6 +89,8 @@ img {
     color: white;
     box-shadow: var(--btnBoxShadow);
 
+    text-align: center;
+
     border-radius: 3px;
 }
 
@@ -137,7 +139,7 @@ img {
 
 @media (min-aspect-ratio: 2/1) {
     .container {
-        height: 83vh;
+        min-height: 83vh;
         align-items: center;
     }
 
